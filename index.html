@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nama Perusahaan</title>
+    <title>KJA LMP - Professional Accounting</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,6 +13,8 @@
         font-family: "Poppins", sans-serif;
         overflow-x: hidden;
       }
+
+      /* Hero */
       .hero {
         background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60")
           center/cover no-repeat;
@@ -26,73 +28,87 @@
         background: rgba(0, 0, 0, 0.45);
         width: 100%;
         height: 100%;
-        padding: 100px 0;
+        padding: 100px 15px;
       }
 
-      .team-scroll {
+      /* Scroll sections */
+      .team-scroll,
+      .clients-scroll {
         overflow-x: auto;
         padding-bottom: 8px;
         white-space: nowrap;
       }
-
-      .team-card {
-        width: 200px; /* lebar foto */
-        height: 300px; /* tinggi foto (memanjang ke bawah) */
+      .team-card,
+      .clients-card {
+        display: inline-block;
         background: #e5e5e5;
         border-radius: 12px;
-        display: block;
+        margin-right: 15px;
       }
-      .team-scroll::-webkit-scrollbar {
+      .team-card {
+        width: 200px;
+        height: 300px;
+      }
+      .clients-card {
+        width: 150px;
+        height: 150px;
+      }
+
+      .team-scroll::-webkit-scrollbar,
+      .clients-scroll::-webkit-scrollbar {
         height: 6px;
       }
-      .team-scroll::-webkit-scrollbar-thumb {
+      .team-scroll::-webkit-scrollbar-thumb,
+      .clients-scroll::-webkit-scrollbar-thumb {
         background: #b5b5b5;
         border-radius: 4px;
       }
 
-      #testimonials .card {
-        border-radius: 12px;
-      }
-      #testimonials .card-body {
-        padding: 1.5rem 1.8rem;
-      }
-      #testimonials .card-footer {
-        padding: 0.75rem 1.8rem 1.5rem;
-      }
-
-      .image-project {
-        width: 100px;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .clients-card {
-        width: 150px;
-        height: 150px;
-        background: #e5e5e5;
-        border-radius: 12px;
-        display: block;
-      }
-
+      /* Leadership */
       .leader-photo {
-        width: 240px;
+        width: 100%;
+        max-width: 240px;
         height: 240px;
         object-fit: cover;
         border-radius: 50%;
         border: 4px solid #eaeaea;
         transition: 0.3s;
       }
-
       .leader-photo:hover {
         transform: scale(1.05);
-        border-color: #0d6efd; /* warna primary bootstrap */
+        border-color: #0d6efd;
+      }
+
+      /* Project image */
+      .image-project {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #e5e5e5;
+      }
+
+      /* Testimonials card */
+      #testimonials .card {
+        border-radius: 12px;
+      }
+
+      /* Responsive typography hero */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <img src="./assets/LOGO.png" alt="Logo Perusahaan" width="50" />
+        <img src="./assets/LOGO.png" alt="Logo KJA" width="50" />
         <a class="navbar-brand fw-bold" href="#">KJA LMP</a>
         <button
           class="navbar-toggler"
@@ -116,6 +132,12 @@
               <a href="#portofolio" class="nav-link">Portfolio</a>
             </li>
             <li class="nav-item">
+              <a href="#testimonials" class="nav-link">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a href="#clients" class="nav-link">Clients</a>
+            </li>
+            <li class="nav-item">
               <a href="#contact" class="nav-link">Contact</a>
             </li>
           </ul>
@@ -123,162 +145,152 @@
       </div>
     </nav>
 
+    <!-- Hero -->
     <section id="home" class="hero">
       <div
         class="overlay d-flex justify-content-center text-center flex-column"
       >
-        <h1 class="display-3 fw-bold">
+        <h1 class="display-3 fw-bold mb-3">
           Solusi Akuntansi Profesional untuk Pertumbuhan Bisnis Anda
         </h1>
         <p class="lead mb-4">
-          KJA hadir sebagai mitra terpercaya dalam menyediakan layanan akuntansi
-          dan konsultasi keuangan. Dengan pengalaman bertahun-tahun, kami
-          membantu perusahaan, UMKM, dan individu mencapai kepatuhan pajak,
-          transparansi keuangan, dan pengambilan keputusan yang tepat.
+          KJA hadir sebagai mitra terpercaya dalam layanan akuntansi dan
+          konsultasi keuangan.
         </p>
-        <a href="#layanan" class="btn btn-primary btn-lg">Jelajahi Layanan</a>
+        <a href="#services" class="btn btn-primary btn-lg">Jelajahi Layanan</a>
       </div>
     </section>
 
+    <!-- About / Story / Mission -->
     <section id="about" class="py-5">
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-md-6">
             <h2 class="fw-bold mb-3">About Us</h2>
-            <p class="mb-3">
+            <p>
               KJA adalah kantor jasa akuntan yang berdedikasi pada layanan
-              akuntansi, audit, pajak, dan konsultasi keuangan. Sejak didirikan
-              pada tahun [tahun], kami berfokus memberikan layanan yang akurat,
-              tepat waktu, dan sesuai regulasi. Tim kami terdiri dari akuntan
-              profesional bersertifikasi yang siap mendukung pertumbuhan bisnis
-              Anda.
+              akuntansi, audit, pajak, dan konsultasi keuangan.
             </p>
           </div>
           <div class="col-md-6">
             <img
               src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
               class="img-fluid rounded shadow"
+              alt="About KJA"
             />
           </div>
         </div>
-        <div class="row align-items-center py-5">
-          <div class="col-md-6">
-            <img
-              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
-              class="img-fluid rounded shadow"
-            />
-          </div>
+
+        <div class="row align-items-center py-5 flex-md-row-reverse">
           <div class="col-md-6">
             <h2 class="fw-bold mb-3">Our Story</h2>
-            <p class="mb-3">
-              KJA lahir dari komitmen untuk menghadirkan layanan akuntansi yang
-              terpercaya dan profesional. Dari awal yang sederhana, kami
-              berkembang menjadi tim akuntan yang solid dan berpengalaman,
-              menangani berbagai klien dari usaha kecil hingga perusahaan besar.
-              Setiap langkah perjalanan kami dibangun atas prinsip integritas,
-              akurasi, dan transparansi.
-            </p>
-          </div>
-        </div>
-        <div class="row align-items-center py-5">
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-3">Our Mision</h2>
-            <p class="mb-3">
-              Menyediakan layanan akuntansi, audit, dan pajak yang akurat dan
-              tepat waktu. Membantu klien mencapai kepatuhan pajak dan regulasi
-              yang berlaku. Memberikan laporan keuangan yang transparan dan
-              mudah dipahami. Menjadi mitra strategis dalam pengambilan
-              keputusan bisnis klien. Menjunjung tinggi profesionalisme,
-              integritas, dan etika akuntansi.
+            <p>
+              KJA lahir dari komitmen untuk layanan akuntansi terpercaya. Kami
+              berkembang menjadi tim profesional yang menangani klien dari UMKM
+              hingga perusahaan besar.
             </p>
           </div>
           <div class="col-md-6">
             <img
               src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
               class="img-fluid rounded shadow"
+              alt="Our Story"
             />
           </div>
         </div>
+
         <div class="row align-items-center py-5">
-          <div class="col-md-12 py-5">
-            <h2 class="fw-bold mb-5 text-center">Leadership Profile</h2>
-
-            <div class="row justify-content-center g-4">
-              <!-- Leader 1 -->
-              <div class="col-md-4 col-sm-6 text-center">
-                <img
-                  src="images/leader1.jpg"
-                  class="leader-photo mb-3"
-                  alt="Leader"
-                />
-                <h5 class="fw-semibold mb-1">
-                  Dr. Luhut Marito Pakpahan, SE. Ak, MM, CA, CPA (Aust.), CMA
-                </h5>
-                <small class="text-muted">Chief Executive Officer</small>
-              </div>
-
-              <!-- Leader 2 -->
-              <div class="col-md-4 col-sm-6 text-center">
-                <img
-                  src="./assets/yusuf.jpg"
-                  class="leader-photo mb-3"
-                  alt="Leader"
-                />
-                <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
-                <small class="text-muted">Chief Operating Officer</small>
-              </div>
-
-              <!-- Leader 3 -->
-              <div class="col-md-4 col-sm-6 text-center">
-                <img
-                  src="images/leader3.jpg"
-                  class="leader-photo mb-3"
-                  alt="Leader"
-                />
-                <h5 class="fw-semibold mb-1">Atri Astuti, SE</h5>
-                <small class="text-muted">Head of Financial Advisory</small>
-              </div>
-            </div>
+          <div class="col-md-6">
+            <h2 class="fw-bold mb-3">Our Mission</h2>
+            <p>
+              Memberikan layanan akuntansi, audit, dan pajak yang akurat dan
+              tepat waktu. Membantu klien mencapai kepatuhan pajak, laporan
+              transparan, dan keputusan bisnis optimal.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
+              class="img-fluid rounded shadow"
+              alt="Our Mission"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="py-5 bg-light">
+    <!-- Leadership -->
+    <section class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5">Leadership Profile</h2>
+        <div class="row justify-content-center g-4">
+          <!-- Leader 1 -->
+          <div class="col-md-4 col-sm-6 text-center">
+            <img
+              src="./assets/yusuf.jpg"
+              class="leader-photo mb-3"
+              alt="Leader"
+            />
+            <h5 class="fw-semibold mb-1">
+              Dr. Luhut Marito Pakpahan, SE. Ak, MM, CA, CPA (Aust.), CMA
+            </h5>
+            <small class="text-muted">Chief Executive Officer</small>
+          </div>
+
+          <!-- Leader 2 -->
+          <div class="col-md-4 col-sm-6 text-center">
+            <img
+              src="./assets/yusuf.jpg"
+              class="leader-photo mb-3"
+              alt="Leader"
+            />
+            <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
+            <small class="text-muted">Chief Operating Officer</small>
+          </div>
+
+          <!-- Leader 3 -->
+          <div class="col-md-4 col-sm-6 text-center">
+            <img
+              src="./assets/yusuf.jpg"
+              class="leader-photo mb-3"
+              alt="Leader"
+            />
+            <h5 class="fw-semibold mb-1">Atri Astuti, SE</h5>
+            <small class="text-muted">Head of Financial Advisory</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5">
       <div class="container">
         <h2 class="text-center fw-bold mb-3">Our Services</h2>
         <p class="text-center text-muted mb-5">
-          We provide reliable and professional accounting services to support
-          your business growth and financial clarity.
+          Professional accounting services to support business growth.
         </p>
-
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm p-4 text-center">
               <h5 class="fw-semibold mb-2">Monthly Bookkeeping</h5>
               <p class="text-muted">
-                Comprehensive recording and organizing of business transactions
-                to ensure accurate financial tracking.
+                Recording and organizing transactions accurately.
               </p>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <h5 class="fw-semibold mb-2">Financial Statement Preparation</h5>
+              <h5 class="fw-semibold mb-2">Financial Statement</h5>
               <p class="text-muted">
-                Preparation of balance sheet, income statement, and cash flow
-                reports based on applicable accounting standards.
+                Balance sheet, income statement, and cash flow preparation.
               </p>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm p-4 text-center">
               <h5 class="fw-semibold mb-2">Tax Compliance & Advisory</h5>
               <p class="text-muted">
-                Assistance with tax calculations, filing, and compliance to
-                ensure accuracy and avoid unnecessary penalties.
+                Tax filing, calculations, and consultancy services.
               </p>
             </div>
           </div>
@@ -286,54 +298,11 @@
       </div>
     </section>
 
-    <section id="whyus" class="py-5">
-      <div class="container">
-        <h2 class="text-center fw-bold mb-3">Why Choose Us</h2>
-        <p class="text-center text-muted mb-5">
-          We are committed to delivering trustworthy, transparent, and
-          high-quality accounting services.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <h5 class="fw-semibold mb-2">Certified & Licensed</h5>
-              <p class="text-muted">
-                Our office and professionals are registered and comply with
-                accounting and regulatory standards.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <h5 class="fw-semibold mb-2">Accurate & On-Time</h5>
-              <p class="text-muted">
-                We deliver financial reports clearly, accurately, and always
-                within agreed deadlines.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm p-4 text-center">
-              <h5 class="fw-semibold mb-2">Client-Focused Approach</h5>
-              <p class="text-muted">
-                We provide flexible support tailored to your business needs,
-                ensuring comfort & clarity in every process.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Portfolio -->
     <section id="portofolio" class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5">Our Portofolio</h2>
-
+        <h2 class="text-center fw-bold mb-5">Our Portfolio</h2>
         <div class="row g-4">
-          <!-- PROJECT ITEM -->
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
               <div class="image-project"></div>
@@ -342,15 +311,13 @@
                   Corporate Financial Audit
                 </h5>
                 <p class="card-text text-muted">
-                  Conducted a comprehensive audit for a mid-sized manufacturing
-                  company to ensure financial transparency and compliance.
+                  Comprehensive audit for a mid-sized manufacturing company.
                 </p>
                 <button
                   class="btn btn-outline-primary btn-sm"
                   data-bs-toggle="modal"
-                  data-bs-target="#project1Modal"
                 >
-                  View Project Details
+                  View Details
                 </button>
               </div>
             </div>
@@ -359,19 +326,16 @@
             <div class="card border-0 shadow-sm h-100">
               <div class="image-project"></div>
               <div class="card-body">
-                <h5 class="card-title fw-semibold">
-                  Corporate Financial Audit
-                </h5>
+                <h5 class="card-title fw-semibold">Tax Advisory for SMEs</h5>
                 <p class="card-text text-muted">
-                  Conducted a comprehensive audit for a mid-sized manufacturing
-                  company to ensure financial transparency and compliance.
+                  Providing guidance to small & medium enterprises for tax
+                  compliance.
                 </p>
                 <button
                   class="btn btn-outline-primary btn-sm"
                   data-bs-toggle="modal"
-                  data-bs-target="#project1Modal"
                 >
-                  View Project Details
+                  View Details
                 </button>
               </div>
             </div>
@@ -380,19 +344,15 @@
             <div class="card border-0 shadow-sm h-100">
               <div class="image-project"></div>
               <div class="card-body">
-                <h5 class="card-title fw-semibold">
-                  Corporate Financial Audit
-                </h5>
+                <h5 class="card-title fw-semibold">Financial Planning</h5>
                 <p class="card-text text-muted">
-                  Conducted a comprehensive audit for a mid-sized manufacturing
-                  company to ensure financial transparency and compliance.
+                  Helping businesses optimize budgeting and investments.
                 </p>
                 <button
                   class="btn btn-outline-primary btn-sm"
                   data-bs-toggle="modal"
-                  data-bs-target="#project1Modal"
                 >
-                  View Project Details
+                  View Details
                 </button>
               </div>
             </div>
@@ -401,60 +361,45 @@
       </div>
     </section>
 
-    <section class="py-5" id="testimonials">
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
       <div class="container text-center">
         <h2 class="fw-bold mb-3">What Our Clients Say</h2>
         <p class="text-muted mb-5">
-          We are committed to providing accurate accounting services and
-          transparent financial insights. Here are some testimonials from our
-          clients.
+          Testimonials from clients who trust our services.
         </p>
-      </div>
-      <div class="container mb-5">
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card shadow-sm h-100 border-0">
               <div class="card-body">
                 <p class="card-text fst-italic">
-                  “The financial reports are consistently precise and delivered
-                  on schedule. Their team is highly responsive and willing to
-                  explain every detail clearly.”
+                  “Precise reports and responsive support. Highly recommended.”
                 </p>
               </div>
               <div class="card-footer bg-white border-0">
                 <h6 class="fw-semibold mb-0">Agus Pratama</h6>
-                <small class="text-muted"
-                  >Owner, PT Pratama Mandiri Group</small
-                >
+                <small class="text-muted">Owner, PT Pratama Mandiri</small>
               </div>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="card shadow-sm h-100 border-0">
               <div class="card-body">
                 <p class="card-text fst-italic">
-                  “A dependable partner in managing our bookkeeping and tax
-                  obligations. Their professionalism allows us to focus on
-                  business growth with confidence.”
+                  “Dependable partner in bookkeeping and tax obligations.”
                 </p>
               </div>
               <div class="card-footer bg-white border-0">
                 <h6 class="fw-semibold mb-0">Cindy Adelia</h6>
-                <small class="text-muted"
-                  >Director, CV Adelia Berkah Sejahtera</small
-                >
+                <small class="text-muted">Director, CV Adelia Berkah</small>
               </div>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="card shadow-sm h-100 border-0">
               <div class="card-body">
                 <p class="card-text fst-italic">
-                  “Their attention to detail and commitment to integrity in
-                  every financial report is exceptional. Highly recommended for
-                  businesses needing trusted accounting services.”
+                  “Attention to detail and commitment to integrity.”
                 </p>
               </div>
               <div class="card-footer bg-white border-0">
@@ -467,44 +412,41 @@
       </div>
     </section>
 
-    <section id="contact" class="py-5">
-      <div class="row align-items-center p-5">
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3">Contact Us</h2>
-          <p class="mb-3">
-            We are here to help you with any accounting or financial needs.
-            Reach out to us using the contact information below.
-          </p>
-          <p class="fw-semibold mb-0">Email: Example@example.com</p>
-          <p class="fw-semibold mb-0">Phone: +1234567890</p>
-        </div>
-        <div class="col-md-6">
-          <img
-            src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
-            class="img-fluid rounded shadow"
-          />
+    <!-- Clients -->
+    <section id="clients" class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5">Our Clients</h2>
+        <div class="clients-scroll">
+          <div class="clients-card"></div>
+          <div class="clients-card"></div>
+          <div class="clients-card"></div>
+          <div class="clients-card"></div>
+          <div class="clients-card"></div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Contact -->
+    <section id="contact" class="py-5">
       <div class="container">
-        <div class="row align-items-center py-5">
-          <div class="col-md-12">
-            <h2 class="fw-bold mb-4 text-center">Our Clients</h2>
-
-            <div class="clients-scroll d-flex justify-content-center gap-3">
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-            </div>
+        <div class="row align-items-center p-5">
+          <div class="col-md-6">
+            <h2 class="fw-bold mb-3">Contact Us</h2>
+            <p>Reach out to us for any accounting or financial needs.</p>
+            <p class="fw-semibold mb-1">Email: info@kjalmp.com</p>
+            <p class="fw-semibold mb-1">Phone: +62 812-3456-7890</p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
+              class="img-fluid rounded shadow"
+            />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-dark text-light pt-5 pb-3">
       <div class="container">
         <div class="row">
@@ -533,7 +475,7 @@
                 >
               </li>
               <li>
-                <a href="#project" class="text-white text-decoration-none"
+                <a href="#portofolio" class="text-white text-decoration-none"
                   >Projects</a
                 >
               </li>
@@ -547,39 +489,23 @@
 
           <div class="col-md-3 mb-4">
             <h6 class="fw-semibold mb-3">Contact</h6>
-            <p class="mb-1">
-              <i class="bi bi-geo-alt me-2"></i>Jl. Nama Jalan No. 123, Kota,
-              Provinsi
-            </p>
-            <p class="mb-1">
-              <i class="bi bi-telephone me-2"></i>+62 812-3456-7890
-            </p>
-            <p class="mb-1">
-              <i class="bi bi-envelope me-2"></i>info@yourcompany.com
-            </p>
+            <p class="mb-1">Jl. Nama Jalan No. 123, Kota, Provinsi</p>
+            <p class="mb-1">+62 812-3456-7890</p>
+            <p class="mb-1">info@kjalmp.com</p>
           </div>
 
           <div class="col-md-3 mb-4">
             <h6 class="fw-semibold mb-3">Follow Us</h6>
-            <a href="#" class="text-light me-3"
-              ><i class="bi bi-instagram fs-5"></i>Istagram:
-              KJA_YourCompanyName</a
-            >
-            <a href="#" class="text-light me-3"
-              ><i class="bi bi-twitter fs-5"></i>Twitter: KJA_YourCompanyName</a
-            >
-            <a href="#" class="text-light me-3"
-              ><i class="bi bi-linkedin fs-5"></i>Linkedin:
-              KJA_YourCompanyName</a
-            >
+            <a href="#" class="text-light me-3">Instagram: KJA_YourCompany</a
+            ><br />
+            <a href="#" class="text-light me-3">Twitter: KJA_YourCompany</a
+            ><br />
+            <a href="#" class="text-light me-3">Linkedin: KJA_YourCompany</a>
           </div>
         </div>
-
         <hr class="border-secondary" />
-
         <div class="text-center">
-          © 2025 <span class="fw-semibold">KJA YourCompanyName</span>. All
-          Rights Reserved.
+          © 2025 <span class="fw-semibold">KJA LMP</span>. All Rights Reserved.
         </div>
       </div>
     </footer>
