@@ -15,6 +15,7 @@
       }
 
       .navbar {
+        background-color: #1e90ff;
         transition: transform 0.3s ease-in-out;
       }
 
@@ -24,8 +25,11 @@
 
       /* Hero */
       .hero {
-        background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60")
-          center/cover no-repeat;
+        background: url("./assets/bghome2.jpg");
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -40,9 +44,12 @@
       }
 
       .btn-halaman-utama {
-        background: #c4c4c4;
-        color: #333;
+        background: #1e90ff;
+        color: white;
         transition: 0.3s;
+      }
+      .btn-halaman-utama:hover {
+        background: #0d3b66;
       }
 
       /* Scroll sections */
@@ -90,7 +97,7 @@
       }
       .leader-photo:hover {
         transform: scale(1.05);
-        border-color: rgba(0, 0, 0, 0.45);
+        border-color: #1e90ff;
       }
 
       /* Project image */
@@ -109,8 +116,69 @@
 
       .nav-link.active {
         font-weight: 600;
-        color: #c4c4c4 !important;
-        border-bottom: 2px solid #c4c4c4;
+        color: white !important;
+        border-bottom: 2px solid white;
+      }
+
+      .box-style-visimisi {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      /* Efek hover biar lebih hidup */
+      .box-style-visimisi:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+      .box-style-services {
+        transition: 0.3s ease;
+      }
+
+      /* Efek hover biar lebih hidup */
+      .box-style-services:hover {
+        transform: translateY(-4px);
+      }
+
+      .visimisi {
+        background-color: #f2f2f2;
+      }
+
+      .bg-wave1 {
+        background: url("./assets/svg1.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+      .bg-wave2 {
+        background: url("./assets/svg2.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+      .bg-wave3 {
+        background: url("./assets/svg3.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+      .bg-wave4 {
+        background: url("./assets/svg4.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+      .bg-wave5 {
+        background: url("./assets/svg5.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+      .bg-wave6 {
+        background: url("./assets/svg6.svg") no-repeat;
+        background-size: cover; /* kalau pecah ganti ke contain */
+        background-position: center;
+      }
+
+      .bg-footer {
+        background-color: #263d55;
       }
 
       /* Responsive typography hero */
@@ -126,10 +194,21 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <img src="./assets/LOGO.png" alt="Logo KJA" width="50" />
-        <a class="navbar-brand fw-bold" href="#">KJA LMP</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
+          <img src="./assets/LOGO.png" alt="Logo KJA" width="50" />
+
+          <div class="d-flex flex-column" style="line-height: 1.1">
+            <span class="navbar-brand fw-bold p-0 m-0" style="font-size: 1rem"
+              >KANTOR JASA AKUNTAN (KJA)
+            </span>
+            <span class="navbar-brand fw-bold p-0 m-0" style="font-size: 1rem"
+              >LUHUT MARITO PAKPAHAN</span
+            >
+          </div>
+        </div>
+
         <button
           class="navbar-toggler"
           data-bs-toggle="collapse"
@@ -137,6 +216,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
@@ -144,19 +224,19 @@
               <a href="#about" class="nav-link">About Us</a>
             </li>
             <li class="nav-item">
+              <a href="#visimisi" class="nav-link">Visi & Misi</a>
+            </li>
+            <li class="nav-item">
               <a href="#services" class="nav-link">Services</a>
             </li>
             <li class="nav-item">
-              <a href="#portofolio" class="nav-link">Portfolio</a>
+              <a href="#ourteam" class="nav-link">Our Team</a>
             </li>
             <li class="nav-item">
-              <a href="#testimonials" class="nav-link">Testimonials</a>
+              <a href="#clients" class="nav-link">Our Clients</a>
             </li>
             <li class="nav-item">
-              <a href="#clients" class="nav-link">Clients</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">Contact</a>
+              <a href="#contact" class="nav-link">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -175,74 +255,182 @@
           KJA hadir sebagai mitra terpercaya dalam layanan akuntansi dan
           konsultasi keuangan.
         </p>
-        <a href="#services" class="btn btn-halaman-utama btn-lg px-4"
-          >Jelajahi Layanan</a
+        <a
+          href="https://wa.me/85710751970"
+          target="_blank"
+          class="btn btn-halaman-utama btn-lg px-4"
         >
+          GET IN TOUCH
+        </a>
       </div>
     </section>
 
-    <!-- About / Story / Mission -->
-    <section id="about" class="py-5">
+    <!-- About -->
+    <section id="about" class="bg-wave2 py-5">
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-md-6">
             <h2 class="fw-bold mb-3">About Us</h2>
             <p>
-              KJA adalah kantor jasa akuntan yang berdedikasi pada layanan
-              akuntansi, audit, pajak, dan konsultasi keuangan.
+              Kantor Jasa Akuntan (KJA) Luhut Marito Pakpahan merupakan penyedia
+              layanan profesional di bidang akuntansi yang mencakup jasa
+              pembukuan, kompilasi laporan keuangan, manajemen, akuntansi
+              manajemen, konsultasi manajemen, perpajakan, prosedur yang
+              disepakati atas informasi keuangan, serta layanan teknologi
+              informasi. Didukung oleh partner dan tenaga ahli yang
+              berpengalaman, KJA Luhut Marito Pakpahan berkomitmen memberikan
+              solusi yang objektif, profesional, dan bernilai tambah bagi setiap
+              klien.
             </p>
           </div>
           <div class="col-md-6">
             <img
-              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
+              src="./assets/bg2.jpg"
               class="img-fluid rounded shadow"
+              width="500"
               alt="About KJA"
-            />
-          </div>
-        </div>
-
-        <div class="row align-items-center py-5 flex-md-row-reverse">
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-3">Our Story</h2>
-            <p>
-              KJA lahir dari komitmen untuk layanan akuntansi terpercaya. Kami
-              berkembang menjadi tim profesional yang menangani klien dari UMKM
-              hingga perusahaan besar.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
-              class="img-fluid rounded shadow"
-              alt="Our Story"
-            />
-          </div>
-        </div>
-
-        <div class="row align-items-center py-5">
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-3">Our Mission</h2>
-            <p>
-              Memberikan layanan akuntansi, audit, dan pajak yang akurat dan
-              tepat waktu. Membantu klien mencapai kepatuhan pajak, laporan
-              transparan, dan keputusan bisnis optimal.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
-              class="img-fluid rounded shadow"
-              alt="Our Mission"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Leadership -->
-    <section class="py-5 bg-light">
+    <div class="bg-wave5">
+      <!-- Visi Misi -->
+      <section id="visimisi" class="py-5">
+        <div class="container py-5">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="box-style-visimisi p-4">
+                <h2 class="fw-bold mb-3">Our Visi</h2>
+                <p>
+                  KJA Luhut Marito Pakpahan merupakan konsultan yang
+                  berlandaskan visi untuk memanfaatkan ilmu pengetahuan dan
+                  keahlian yang dimiliki guna memberikan nilai tambah bagi
+                  kemajuan klien serta lingkungan masyarakat secara luas.
+                  Sebagai salah satu Kantor Jasa Akuntan yang memiliki reputasi
+                  baik, berintegritas tinggi, profesional, dan independen, KJA
+                  Yasin & Yasin menjalankan setiap penugasan dengan mengacu pada
+                  ketentuan yang berlaku serta prinsip akuntansi yang berterima
+                  umum, sehingga mampu memberikan manfaat dan kepercayaan bagi
+                  para pengguna jasa.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box-style-visimisi p-4">
+                <h2 class="fw-bold mb-3">Our Misi</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    • Turut berkontribusi dalam pembangunan negara melalui
+                    penerapan profesionalisme dan independensi sesuai ketentuan
+                    dan standar yang berlaku.
+                  </li>
+                  <li>
+                    • Memberikan jasa dengan kualitas terbaik sehingga
+                    memberikan manfaat nyata bagi para pemangku kepentingan
+                    (stakeholder).
+                  </li>
+                  <li>
+                    • Memperluas jaringan melalui kerja sama strategis dengan
+                    mitra yang relevan dan institusi sejenis.
+                  </li>
+                  <li>
+                    • Mengembangkan kompetensi profesional melalui personnel
+                    assessment, pendidikan berkelanjutan, serta pelatihan
+                    internal maupun eksternal.
+                  </li>
+                  <li>
+                    • Mengoptimalkan penggunaan teknologi informasi dalam
+                    pelaksanaan pekerjaan untuk meningkatkan akurasi dan
+                    efektivitas.
+                  </li>
+                  <li>
+                    • Memberikan kesempatan bagi mahasiswa atau akuntan pemula
+                    untuk menerapkan ilmu secara nyata melalui program
+                    pembinaan.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-5">
+        <div class="container">
+          <h2 class="text-center fw-bold">Our Services</h2>
+          <p class="text-center mb-5">
+            LOGO CHARTERED ACCOUNTANT DAN IKATAN AKUNTAN INDONESIA
+          </p>
+          <div class="row g-4">
+            <div class="box-style-services col-md-4">
+              <div class="card border-0 shadow-lg h-100">
+                <div class="image-project"></div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold">
+                    Corporate Financial Audit
+                  </h5>
+                  <p class="card-text text-muted">
+                    Comprehensive audit for a mid-sized manufacturing company.
+                  </p>
+                  <button
+                    class="btn btn-halaman-utama btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAudit"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="box-style-services col-md-4">
+              <div class="card border-0 shadow-lg h-100">
+                <div class="image-project"></div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold">Tax Advisory for SMEs</h5>
+                  <p class="card-text text-muted">
+                    Providing guidance to small & medium enterprises for tax
+                    compliance.
+                  </p>
+                  <button
+                    class="btn btn-halaman-utama btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalTax"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="box-style-services col-md-4">
+              <div class="card border-0 shadow-lg h-100">
+                <div class="image-project"></div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold">Financial Planning</h5>
+                  <p class="card-text text-muted">
+                    Helping businesses optimize budgeting and investments.
+                  </p>
+                  <button
+                    class="btn btn-halaman-utama btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalPlanning"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Our Team -->
+    <section id="ourteam" class="py-5">
       <div class="container text-center">
-        <h2 class="fw-bold mb-5">Leadership Profile</h2>
+        <h2 class="fw-bold mb-5">Our Team</h2>
         <div class="row justify-content-center g-4">
           <!-- Leader 1 -->
           <div class="col-md-4 col-sm-6 text-center">
@@ -254,7 +442,7 @@
             <h5 class="fw-semibold mb-1">
               Dr. Luhut Marito Pakpahan, SE. Ak, MM, CA, CPA (Aust.), CMA
             </h5>
-            <small class="text-muted">Chief Executive Officer</small>
+            <small class="text-muted">Managing Partner</small>
           </div>
 
           <!-- Leader 2 -->
@@ -265,215 +453,68 @@
               alt="Leader"
             />
             <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
-            <small class="text-muted">Chief Operating Officer</small>
+            <small class="text-muted">Business Consultant </small>
           </div>
 
           <!-- Leader 3 -->
           <div class="col-md-4 col-sm-6 text-center">
             <img
-              src="./assets/yusuf.jpg"
+              src="./assets/atri.png"
               class="leader-photo mb-3"
               alt="Leader"
             />
             <h5 class="fw-semibold mb-1">Atri Astuti, SE</h5>
-            <small class="text-muted">Head of Financial Advisory</small>
+            <small class="text-muted">Tax Consultant</small>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-5">
-      <div class="container">
-        <h2 class="text-center fw-bold mb-3">Our Services</h2>
-        <p class="text-center text-muted mb-5">
-          Professional accounting services to support business growth.
-        </p>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-lg p-4 text-center">
-              <h5 class="fw-semibold mb-2">Monthly Bookkeeping</h5>
-              <p class="text-muted">
-                Recording and organizing transactions accurately.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-lg p-4 text-center">
-              <h5 class="fw-semibold mb-2">Financial Statement</h5>
-              <p class="text-muted">
-                Balance sheet, income statement, and cash flow preparation.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-lg p-4 text-center">
-              <h5 class="fw-semibold mb-2">Tax Compliance & Advisory</h5>
-              <p class="text-muted">
-                Tax filing, calculations, and consultancy services.
-              </p>
-            </div>
+    <div class="bg-wave6">
+      <!-- Clients -->
+      <section id="clients" class="py-5">
+        <div class="container text-center">
+          <h2 class="fw-bold mb-5">Our Clients</h2>
+          <div class="clients-scroll">
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Portfolio -->
-    <section id="portofolio" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center fw-bold mb-5">Our Portfolio</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card border-0 shadow-lg h-100">
-              <div class="image-project"></div>
-              <div class="card-body">
-                <h5 class="card-title fw-semibold">
-                  Corporate Financial Audit
-                </h5>
-                <p class="card-text text-muted">
-                  Comprehensive audit for a mid-sized manufacturing company.
-                </p>
-                <button
-                  class="btn btn-halaman-utama btn-sm"
-                  data-bs-toggle="modal"
-                >
-                  View Details
-                </button>
-              </div>
+      <!-- Contact -->
+      <section id="contact" class="py-5">
+        <div class="container">
+          <div class="row align-items-center p-5">
+            <div class="col-md-6">
+              <h2 class="fw-bold mb-3">Contact Us</h2>
+              <p>Reach out to us for any accounting or financial needs.</p>
+              <p class="fw-semibold mb-1">Email: yusufhidral@gmail.com</p>
+              <p class="fw-semibold mb-1">Phone: (+62)857-1075-1970</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-lg h-100">
-              <div class="image-project"></div>
-              <div class="card-body">
-                <h5 class="card-title fw-semibold">Tax Advisory for SMEs</h5>
-                <p class="card-text text-muted">
-                  Providing guidance to small & medium enterprises for tax
-                  compliance.
-                </p>
-                <button
-                  class="btn btn-halaman-utama btn-sm"
-                  data-bs-toggle="modal"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-lg h-100">
-              <div class="image-project"></div>
-              <div class="card-body">
-                <h5 class="card-title fw-semibold">Financial Planning</h5>
-                <p class="card-text text-muted">
-                  Helping businesses optimize budgeting and investments.
-                </p>
-                <button
-                  class="btn btn-halaman-utama btn-sm"
-                  data-bs-toggle="modal"
-                >
-                  View Details
-                </button>
-              </div>
+            <div class="col-md-6">
+              <img
+                src="./assets/bg3.jpg"
+                width="500"
+                class="img-fluid rounded shadow"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-5">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-3">What Our Clients Say</h2>
-        <p class="text-muted mb-5">
-          Testimonials from clients who trust our services.
-        </p>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card shadow-lg h-100 border-0">
-              <div class="card-body">
-                <p class="card-text fst-italic">
-                  “Precise reports and responsive support. Highly recommended.”
-                </p>
-              </div>
-              <div class="card-footer bg-white border-0">
-                <h6 class="fw-semibold mb-0">Agus Pratama</h6>
-                <small class="text-muted">Owner, PT Pratama Mandiri</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow-lg h-100 border-0">
-              <div class="card-body">
-                <p class="card-text fst-italic">
-                  “Dependable partner in bookkeeping and tax obligations.”
-                </p>
-              </div>
-              <div class="card-footer bg-white border-0">
-                <h6 class="fw-semibold mb-0">Cindy Adelia</h6>
-                <small class="text-muted">Director, CV Adelia Berkah</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow-lg h-100 border-0">
-              <div class="card-body">
-                <p class="card-text fst-italic">
-                  “Attention to detail and commitment to integrity.”
-                </p>
-              </div>
-              <div class="card-footer bg-white border-0">
-                <h6 class="fw-semibold mb-0">Muhammad Rizky</h6>
-                <small class="text-muted">Founder, RZK Creative Studio</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Clients -->
-    <section id="clients" class="py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-5">Our Clients</h2>
-        <div class="clients-scroll">
-          <div class="clients-card"></div>
-          <div class="clients-card"></div>
-          <div class="clients-card"></div>
-          <div class="clients-card"></div>
-          <div class="clients-card"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-5">
-      <div class="container">
-        <div class="row align-items-center p-5">
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-3">Contact Us</h2>
-            <p>Reach out to us for any accounting or financial needs.</p>
-            <p class="fw-semibold mb-1">Email: info@kjalmp.com</p>
-            <p class="fw-semibold mb-1">Phone: +62 812-3456-7890</p>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=60"
-              class="img-fluid rounded shadow"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light pt-5 pb-3">
+    <footer class="bg-footer text-light pt-5 pb-3">
       <div class="container">
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="d-flex align-items-center">
               <img src="./assets/LOGO.png" width="50" alt="Logo" class="mb-3" />
-              <h4 class="fw-bold">KJA LMP</h4>
+              <h5 class="fw-bold">(KJA) LUHUT MARITO PAKPAHAN</h5>
             </div>
             <p>
               Professional Public Accounting & Business Advisory firm dedicated
@@ -509,9 +550,11 @@
 
           <div class="col-md-3 mb-4">
             <h6 class="fw-semibold mb-3">Contact</h6>
-            <p class="mb-1">Jl. Nama Jalan No. 123, Kota, Provinsi</p>
-            <p class="mb-1">+62 812-3456-7890</p>
-            <p class="mb-1">info@kjalmp.com</p>
+            <p class="mb-1">
+              Jl. Dr. Saharjo No. 96G, Menteng Atas, Setiabudi, Jakarta 12960
+            </p>
+            <p class="mb-1">Phone: (+62)857-1075-1970</p>
+            <p class="mb-1">Email: yusufhidral@gmail.com</p>
           </div>
 
           <div class="col-md-3 mb-4">
@@ -529,6 +572,135 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal Corporate Financial Audit -->
+    <div
+      class="modal fade"
+      id="modalAudit"
+      tabindex="-1"
+      aria-labelledby="modalAuditLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalAuditLabel">
+              Corporate Financial Audit
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kami menyediakan layanan audit laporan keuangan yang komprehensif
+              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
+              standar akuntansi yang berlaku. Audit dilakukan oleh tim
+              profesional berpengalaman untuk membantu pengambilan keputusan dan
+              menjaga kredibilitas perusahaan.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Tax Advisory for SMEs -->
+    <div
+      class="modal fade"
+      id="modalTax"
+      tabindex="-1"
+      aria-labelledby="modalTaxLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalTaxLabel">
+              Tax Advisory for SMEs
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kami menyediakan layanan audit laporan keuangan yang komprehensif
+              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
+              standar akuntansi yang berlaku. Audit dilakukan oleh tim
+              profesional berpengalaman untuk membantu pengambilan keputusan dan
+              menjaga kredibilitas perusahaan.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Financial Planning -->
+    <div
+      class="modal fade"
+      id="modalPlanning"
+      tabindex="-1"
+      aria-labelledby="modalPlanningLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalPlanningLabel">
+              Financial Planning
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kami menyediakan layanan audit laporan keuangan yang komprehensif
+              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
+              standar akuntansi yang berlaku. Audit dilakukan oleh tim
+              profesional berpengalaman untuk membantu pengambilan keputusan dan
+              menjaga kredibilitas perusahaan.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       const navLinks = document.querySelectorAll(".nav-link");
