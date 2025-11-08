@@ -555,21 +555,29 @@
     </script>
 
     <script>
-      let lastScrollTop = 0;
-      const navbar = document.querySelector(".navbar");
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollTop = 0;
+        const navbar = document.querySelector(".navbar");
+        const navMenu = document.getElementById("navmenu");
 
-      window.addEventListener("scroll", function () {
-        let currentScroll = window.pageYOffset;
+        window.addEventListener("scroll", function () {
+          let currentScroll = window.pageYOffset;
 
-        if (currentScroll > lastScrollTop) {
-          // Scroll ke bawah -> sembunyikan navbar
-          navbar.classList.add("hide");
-        } else {
-          // Scroll ke atas -> tampilkan navbar
-          navbar.classList.remove("hide");
-        }
+          if (currentScroll > lastScrollTop) {
+            navbar.classList.add("hide");
+            navMenu.classList.remove("show");
+          } else {
+            navbar.classList.remove("hide");
+          }
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", () => {
+            navMenu.classList.remove("show");
+          });
+        });
       });
     </script>
 
