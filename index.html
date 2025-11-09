@@ -109,25 +109,43 @@
       /* Scroll sections */
       .clients-scroll {
         overflow-x: auto;
-        padding-bottom: 8px;
         white-space: nowrap;
-      }
-      .clients-card {
-        display: inline-block;
-        background: #e5e5e5;
-        border-radius: 12px;
-        margin-right: 15px;
-      }
-      .clients-card {
-        width: 150px;
-        height: 150px;
+        scroll-behavior: smooth;
+        position: relative;
       }
 
       .clients-scroll::-webkit-scrollbar {
-        height: 6px;
+        display: none; /* Hilangkan scrollbar */
       }
-      .clients-scroll::-webkit-scrollbar-thumb {
-        background: transparent;
+
+      .clients-track {
+        display: flex;
+        gap: 30px;
+        animation: scrollLoop 18s linear infinite;
+      }
+
+      .clients-card {
+        min-width: 160px;
+        height: 80px;
+        background: #e9ecef;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      /* Animasi Loop */
+      @keyframes scrollLoop {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Pause animasi saat user hover/drag */
+      .clients-scroll:hover .clients-track,
+      .clients-scroll:active .clients-track {
+        animation-play-state: paused;
       }
 
       /* Footer */
@@ -530,12 +548,23 @@
       <section id="clients" class="py-5">
         <div class="container text-center">
           <h2 class="fw-bold mb-5">Our Clients</h2>
+
           <div class="clients-scroll">
-            <div class="clients-card"></div>
-            <div class="clients-card"></div>
-            <div class="clients-card"></div>
-            <div class="clients-card"></div>
-            <div class="clients-card"></div>
+            <div class="clients-track">
+              <!-- Set 1 -->
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+
+              <!-- Set 2 (duplikat untuk infinite loop) -->
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+              <div class="clients-card"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -586,13 +615,23 @@
                 >
               </li>
               <li>
+                <a href="#visimisi" class="text-white text-decoration-none"
+                  >Visi & Misi</a
+                >
+              </li>
+              <li>
                 <a href="#services" class="text-white text-decoration-none"
                   >Services</a
                 >
               </li>
               <li>
-                <a href="#portofolio" class="text-white text-decoration-none"
-                  >Projects</a
+                <a href="#ourteam" class="text-white text-decoration-none"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a href="#clients" class="text-white text-decoration-none"
+                  >Clients</a
                 >
               </li>
               <li>
@@ -614,11 +653,9 @@
 
           <div class="col-md-3 mb-4">
             <h6 class="fw-semibold mb-3">Follow Us</h6>
-            <a href="#" class="text-light me-3">Instagram: KJA_YourCompany</a
-            ><br />
-            <a href="#" class="text-light me-3">Twitter: KJA_YourCompany</a
-            ><br />
-            <a href="#" class="text-light me-3">Linkedin: KJA_YourCompany</a>
+            <a href="#" class="text-light me-3">Instagram: KJA_Company</a><br />
+            <a href="#" class="text-light me-3">Twitter: KJA_Company</a><br />
+            <a href="#" class="text-light me-3">Linkedin: KJA_Company</a>
           </div>
         </div>
         <hr class="border-secondary" />
@@ -661,7 +698,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Tutup
@@ -708,7 +745,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Tutup
@@ -753,7 +790,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Tutup
@@ -795,7 +832,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Tutup
