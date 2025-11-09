@@ -14,6 +14,7 @@
         overflow-x: hidden;
       }
 
+      /* Navbar */
       .navbar {
         background-color: #1e90ff;
         transition: transform 0.3s ease-in-out;
@@ -22,9 +23,19 @@
       .navbar.hide {
         transform: translateY(-100%);
       }
+      .nav-link.active {
+        font-weight: 600;
+        color: white !important;
+        border-bottom: 2px solid white;
+      }
+      .title-text {
+        color: white;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
 
-      /* Hero */
-      .hero {
+      /* Home */
+      .home {
         background: url("./assets/bghome2.jpg");
         object-fit: cover;
         background-position: center;
@@ -37,7 +48,7 @@
         text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
       }
       .overlay {
-        background: rgba(0, 0, 0, 0.45);
+        background-color: rgba(0, 0, 0, 0.45);
         width: 100%;
         height: 100%;
         padding: 100px 15px;
@@ -52,74 +63,10 @@
         background: #0d3b66;
       }
 
-      /* Scroll sections */
-      .team-scroll,
-      .clients-scroll {
-        overflow-x: auto;
-        padding-bottom: 8px;
-        white-space: nowrap;
+      /* Visi & Misi */
+      .visimisi {
+        background-color: #f2f2f2;
       }
-      .team-card,
-      .clients-card {
-        display: inline-block;
-        background: #e5e5e5;
-        border-radius: 12px;
-        margin-right: 15px;
-      }
-      .team-card {
-        width: 200px;
-        height: 300px;
-      }
-      .clients-card {
-        width: 150px;
-        height: 150px;
-      }
-
-      .team-scroll::-webkit-scrollbar,
-      .clients-scroll::-webkit-scrollbar {
-        height: 6px;
-      }
-      .team-scroll::-webkit-scrollbar-thumb,
-      .clients-scroll::-webkit-scrollbar-thumb {
-        background: #b5b5b5;
-        border-radius: 4px;
-      }
-
-      /* Leadership */
-      .leader-photo {
-        width: 100%;
-        max-width: 240px;
-        height: 240px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 4px solid #eaeaea;
-        transition: 0.3s;
-      }
-      .leader-photo:hover {
-        transform: scale(1.05);
-        border-color: #1e90ff;
-      }
-
-      /* Project image */
-      .image-project {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
-        background: #e5e5e5;
-      }
-
-      /* Testimonials card */
-      #testimonials .card {
-        border-radius: 12px;
-      }
-
-      .nav-link.active {
-        font-weight: 600;
-        color: white !important;
-        border-bottom: 2px solid white;
-      }
-
       .box-style-visimisi {
         background: #ffffff;
         border-radius: 16px;
@@ -127,25 +74,66 @@
         transition: 0.3s ease;
         border: 1px solid rgba(0, 0, 0, 0.05);
       }
-
-      /* Efek hover biar lebih hidup */
       .box-style-visimisi:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
       }
+
+      /* Services */
       .box-style-services {
         transition: 0.3s ease;
       }
-
-      /* Efek hover biar lebih hidup */
       .box-style-services:hover {
         transform: translateY(-4px);
       }
 
-      .visimisi {
-        background-color: #f2f2f2;
+      .image-services {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: white;
       }
 
+      /* Our Team */
+      .our-team-photo {
+        width: 100%;
+        max-width: 240px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #1e90ff;
+        transition: 0.3s;
+      }
+      .our-team-photo:hover {
+        transform: scale(1.05);
+      }
+
+      /* Scroll sections */
+      .clients-scroll {
+        overflow-x: auto;
+        padding-bottom: 8px;
+        white-space: nowrap;
+      }
+      .clients-card {
+        display: inline-block;
+        background: #e5e5e5;
+        border-radius: 12px;
+        margin-right: 15px;
+      }
+      .clients-card {
+        width: 150px;
+        height: 150px;
+      }
+
+      .clients-scroll::-webkit-scrollbar {
+        height: 6px;
+      }
+      .clients-scroll::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+
+      /* SVG WAVE */
       .bg-wave1 {
         background: url("./assets/svg1.svg") no-repeat;
         background-size: cover; /* kalau pecah ganti ke contain */
@@ -177,17 +165,22 @@
         background-position: center;
       }
 
+      /* Footer */
       .bg-footer {
         background-color: #263d55;
       }
 
-      /* Responsive typography hero */
       @media (max-width: 768px) {
-        .hero h1 {
+        .home h1 {
           font-size: 2rem;
         }
-        .hero p {
+        .home p {
           font-size: 1rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .title-text span {
+          font-size: 10px; /* bisa kamu adjust jadi 11/12 kalau mau sedikit lebih besar */
         }
       }
     </style>
@@ -195,17 +188,13 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container d-flex align-items-center">
-        <div class="d-flex align-items-center gap-2">
-          <img src="./assets/LOGO.png" alt="Logo KJA" width="50" />
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 flex-grow-1">
+          <img src="./assets/LOGO.png" alt="Logo KJA" width="45" />
 
-          <div class="d-flex flex-column" style="line-height: 1.1">
-            <span class="navbar-brand fw-bold p-0 m-0" style="font-size: 1rem"
-              >KANTOR JASA AKUNTAN (KJA)
-            </span>
-            <span class="navbar-brand fw-bold p-0 m-0" style="font-size: 1rem"
-              >LUHUT MARITO PAKPAHAN</span
-            >
+          <div class="d-flex flex-column title-text">
+            <span class="fw-bold p-0 m-0">KANTOR JASA AKUNTAN (KJA)</span>
+            <span class="fw-bold p-0 m-0">LUHUT MARITO PAKPAHAN</span>
           </div>
         </div>
 
@@ -244,7 +233,7 @@
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="hero">
+    <section id="home" class="home">
       <div
         class="overlay d-flex justify-content-center align-items-center text-center flex-column"
       >
@@ -367,7 +356,7 @@
           <div class="row g-4">
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-project"></div>
+                <div class="image-services"></div>
                 <div class="card-body">
                   <h5 class="card-title fw-semibold">
                     Corporate Financial Audit
@@ -387,7 +376,7 @@
             </div>
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-project"></div>
+                <div class="image-services"></div>
                 <div class="card-body">
                   <h5 class="card-title fw-semibold">Tax Advisory for SMEs</h5>
                   <p class="card-text text-muted">
@@ -406,7 +395,7 @@
             </div>
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-project"></div>
+                <div class="image-services"></div>
                 <div class="card-body">
                   <h5 class="card-title fw-semibold">Financial Planning</h5>
                   <p class="card-text text-muted">
@@ -436,7 +425,7 @@
           <div class="col-md-4 col-sm-6 text-center">
             <img
               src="./assets/yusuf.jpg"
-              class="leader-photo mb-3"
+              class="our-team-photo mb-3"
               alt="Leader"
             />
             <h5 class="fw-semibold mb-1">
@@ -449,7 +438,7 @@
           <div class="col-md-4 col-sm-6 text-center">
             <img
               src="./assets/yusuf.jpg"
-              class="leader-photo mb-3"
+              class="our-team-photo mb-3"
               alt="Leader"
             />
             <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
@@ -460,7 +449,7 @@
           <div class="col-md-4 col-sm-6 text-center">
             <img
               src="./assets/atri.png"
-              class="leader-photo mb-3"
+              class="our-team-photo mb-3"
               alt="Leader"
             />
             <h5 class="fw-semibold mb-1">Atri Astuti, SE</h5>
