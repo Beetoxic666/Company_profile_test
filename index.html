@@ -16,7 +16,11 @@
 
       /* Navbar */
       .navbar {
-        background-color: #1e90ff;
+        background: rgba(11, 81, 156, 0.6); /* warna dengan transparansi */
+        backdrop-filter: blur(
+          12px
+        ); /* rekomendasi 6-20px, 100px terlalu besar */
+        -webkit-backdrop-filter: blur(12px); /* biar support Safari */
         transition: transform 0.3s ease-in-out;
       }
 
@@ -36,7 +40,7 @@
 
       /* Home */
       .home {
-        background: url("./assets/bghome2.jpg");
+        background: url("./assets/pexels-pixabay-290275.jpg");
         object-fit: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -55,12 +59,17 @@
       }
 
       .btn-halaman-utama {
-        background: #1e90ff;
-        color: white;
+        border-width: 2px;
+        border-color: #1e90ff;
+        color: #1e90ff;
+        backdrop-filter: blur(
+          5px
+        ); /* rekomendasi 6-20px, 100px terlalu besar */
+        -webkit-backdrop-filter: blur(5px);
         transition: 0.3s;
       }
       .btn-halaman-utama:hover {
-        background: #0d3b66;
+        background: #1e90ff;
       }
 
       /* Visi & Misi */
@@ -93,7 +102,7 @@
       }
 
       /* Our Team */
-      .our-team-photo {
+      .team-photo {
         width: 100%;
         max-width: 240px;
         height: 240px;
@@ -102,8 +111,34 @@
         border: 4px solid #1e90ff;
         transition: 0.3s;
       }
-      .our-team-photo:hover {
+
+      .team-photo:hover {
         transform: scale(1.05);
+      }
+
+      /* Leader Highlight */
+      .leader-container {
+        transform: translateY(-10px);
+      }
+
+      .leader-photo {
+        width: 100%;
+        max-width: 240px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #1e90ff;
+        transition: 0.3s;
+        transform: translateY(-10px);
+      }
+
+      .team-1,
+      .team-2 {
+        transform: translateY(50px);
+      }
+
+      .team-photo-2 {
+        transform: scale(100%);
       }
 
       /* Scroll sections */
@@ -115,7 +150,7 @@
       }
 
       .clients-scroll::-webkit-scrollbar {
-        display: none; /* Hilangkan scrollbar */
+        display: none;
       }
 
       .clients-track {
@@ -142,7 +177,6 @@
         }
       }
 
-      /* Pause animasi saat user hover/drag */
       .clients-scroll:hover .clients-track,
       .clients-scroll:active .clients-track {
         animation-play-state: paused;
@@ -150,38 +184,18 @@
 
       /* Footer */
       .bg-footer {
-        background-color: #263d55;
+        background: rgba(35, 108, 186, 0.759);
       }
 
       /* SVG WAVE */
-      .bg-wave1 {
-        background: url("./assets/svg1.svg") no-repeat;
+      .bg-1 {
+        background: url("./assets/3.png") no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
       }
-      .bg-wave2 {
-        background: url("./assets/svg2.svg") no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .bg-wave3 {
-        background: url("./assets/svg3.svg") no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .bg-wave4 {
-        background: url("./assets/svg4.svg") no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .bg-wave5 {
-        background: url("./assets/svg5.svg") no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .bg-wave6 {
-        background: url("./assets/svg6.svg") no-repeat;
+      .bg-2 {
+        background: url("./assets/1.png") no-repeat;
         background-size: cover;
         background-position: center;
       }
@@ -199,6 +213,11 @@
           font-size: 13px;
         }
       }
+      .title {
+        display: inline-block;
+        border-bottom: 3px solid #1e90ff;
+        padding-bottom: 2px; /* opsional, biar ada jarak dikit */
+      }
     </style>
   </head>
   <body>
@@ -206,7 +225,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-2 flex-grow-1">
-          <img src="./assets/LOGO.png" alt="Logo KJA" width="45" />
+          <img src="./assets/LOGO.png" alt="Logo KJA" width="75" />
 
           <div class="d-flex flex-column title-text">
             <span class="fw-bold p-0 m-0">KANTOR JASA AKUNTAN (KJA)</span>
@@ -226,22 +245,22 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
             <li class="nav-item">
-              <a href="#about" class="nav-link">About Us</a>
+              <a href="#about" class="nav-link">Tentang</a>
             </li>
             <li class="nav-item">
               <a href="#visimisi" class="nav-link">Visi & Misi</a>
             </li>
             <li class="nav-item">
-              <a href="#services" class="nav-link">Services</a>
+              <a href="#services" class="nav-link">Layanan</a>
             </li>
             <li class="nav-item">
-              <a href="#ourteam" class="nav-link">Our Team</a>
+              <a href="#ourteam" class="nav-link">Team</a>
             </li>
             <li class="nav-item">
-              <a href="#clients" class="nav-link">Our Clients</a>
+              <a href="#clients" class="nav-link">Klien</a>
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link">Contact Us</a>
+              <a href="#contact" class="nav-link">Kontak</a>
             </li>
           </ul>
         </div>
@@ -271,11 +290,11 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="bg-wave2 py-5">
+    <section id="about" class="bg-2 py-5">
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-md-6">
-            <h2 class="fw-bold mb-3">About Us</h2>
+            <h2 class="fw-bold mb-3 title">Tentang Kami</h2>
             <p>
               Kantor Jasa Akuntan (KJA) Luhut Marito Pakpahan merupakan penyedia
               layanan profesional di bidang akuntansi yang mencakup jasa
@@ -300,217 +319,220 @@
       </div>
     </section>
 
-    <div class="bg-wave5">
-      <!-- Visi Misi -->
-      <section id="visimisi" class="py-5">
-        <div class="container py-5">
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="box-style-visimisi p-4">
-                <h2 class="fw-bold mb-3">Our Visi</h2>
-                <p>
-                  KJA Luhut Marito Pakpahan merupakan konsultan yang
-                  berlandaskan visi untuk memanfaatkan ilmu pengetahuan dan
-                  keahlian yang dimiliki guna memberikan nilai tambah bagi
-                  kemajuan klien serta lingkungan masyarakat secara luas.
-                  Sebagai salah satu Kantor Jasa Akuntan yang memiliki reputasi
-                  baik, berintegritas tinggi, profesional, dan independen, KJA
-                  Yasin & Yasin menjalankan setiap penugasan dengan mengacu pada
-                  ketentuan yang berlaku serta prinsip akuntansi yang berterima
-                  umum, sehingga mampu memberikan manfaat dan kepercayaan bagi
-                  para pengguna jasa.
+    <!-- Visi Misi -->
+    <section id="visimisi" class="py-5 bg-1">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="box-style-visimisi p-4">
+              <h2 class="fw-bold mb-3 title">Visi</h2>
+              <p>
+                KJA Luhut Marito Pakpahan merupakan konsultan yang berlandaskan
+                visi untuk memanfaatkan ilmu pengetahuan dan keahlian yang
+                dimiliki guna memberikan nilai tambah bagi kemajuan klien serta
+                lingkungan masyarakat secara luas. Sebagai salah satu Kantor
+                Jasa Akuntan yang memiliki reputasi baik, berintegritas tinggi,
+                profesional, dan independen, KJA Luhut Marito Pakpahan
+                menjalankan setiap penugasan dengan mengacu pada ketentuan yang
+                berlaku serta prinsip akuntansi yang berterima umum, sehingga
+                mampu memberikan manfaat dan kepercayaan bagi para pengguna
+                jasa.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box-style-visimisi p-4">
+              <h2 class="fw-bold mb-3 title">Misi</h2>
+              <ul class="list-unstyled">
+                <li>
+                  • Turut berkontribusi dalam pembangunan negara melalui
+                  penerapan profesionalisme dan independensi sesuai ketentuan
+                  dan standar yang berlaku.
+                </li>
+                <li>
+                  • Memberikan jasa dengan kualitas terbaik sehingga memberikan
+                  manfaat nyata bagi para pemangku kepentingan (stakeholder).
+                </li>
+                <li>
+                  • Memperluas jaringan melalui kerja sama strategis dengan
+                  mitra yang relevan dan institusi sejenis.
+                </li>
+                <li>
+                  • Mengembangkan kompetensi profesional melalui personnel
+                  assessment, pendidikan berkelanjutan, serta pelatihan internal
+                  maupun eksternal.
+                </li>
+                <li>
+                  • Mengoptimalkan penggunaan teknologi informasi dalam
+                  pelaksanaan pekerjaan untuk meningkatkan akurasi dan
+                  efektivitas.
+                </li>
+                <li>
+                  • Memberikan kesempatan bagi mahasiswa atau akuntan pemula
+                  untuk menerapkan ilmu secara nyata melalui program pembinaan.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4 title">Layanan Kami</h2>
+        <div class="row justify-content-center g-4">
+          <div class="box-style-services col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+              <img
+                src="./assets/orangebook-svgrepo-com.svg"
+                alt=""
+                class="image-services"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Jasa Pembukuan</h5>
+                <p class="card-text text-muted">
+                  Menyusun dan mengelola pembukuan secara sistematis untuk
+                  mendukung laporan keuangan yang rapi dan akurat.
                 </p>
+                <button
+                  class="btn btn-halaman-utama btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalJasaPembukuan"
+                >
+                  Lihat Detail
+                </button>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="box-style-visimisi p-4">
-                <h2 class="fw-bold mb-3">Our Misi</h2>
-                <ul class="list-unstyled">
-                  <li>
-                    • Turut berkontribusi dalam pembangunan negara melalui
-                    penerapan profesionalisme dan independensi sesuai ketentuan
-                    dan standar yang berlaku.
-                  </li>
-                  <li>
-                    • Memberikan jasa dengan kualitas terbaik sehingga
-                    memberikan manfaat nyata bagi para pemangku kepentingan
-                    (stakeholder).
-                  </li>
-                  <li>
-                    • Memperluas jaringan melalui kerja sama strategis dengan
-                    mitra yang relevan dan institusi sejenis.
-                  </li>
-                  <li>
-                    • Mengembangkan kompetensi profesional melalui personnel
-                    assessment, pendidikan berkelanjutan, serta pelatihan
-                    internal maupun eksternal.
-                  </li>
-                  <li>
-                    • Mengoptimalkan penggunaan teknologi informasi dalam
-                    pelaksanaan pekerjaan untuk meningkatkan akurasi dan
-                    efektivitas.
-                  </li>
-                  <li>
-                    • Memberikan kesempatan bagi mahasiswa atau akuntan pemula
-                    untuk menerapkan ilmu secara nyata melalui program
-                    pembinaan.
-                  </li>
-                </ul>
+          </div>
+
+          <div class="box-style-services col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+              <img
+                src="./assets/presentation-financial-svgrepo-com.svg"
+                alt=""
+                class="image-services"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">
+                  Penyusunan & Kompilasi Laporan Keuangan
+                </h5>
+                <p class="card-text text-muted">
+                  Penyajian laporan keuangan yang jelas, terstruktur, dan sesuai
+                  standar untuk kebutuhan internal maupun eksternal.
+                </p>
+                <button
+                  class="btn btn-halaman-utama btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPenyusunanLaporanKeuangan"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-style-services col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+              <img
+                src="./assets/business-person-woman-who-consults-svgrepo-com.svg"
+                alt=""
+                class="image-services"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">
+                  Konsultasi Manajemen & Keuangan
+                </h5>
+                <p class="card-text text-muted">
+                  Memberikan solusi strategis untuk meningkatkan efektivitas
+                  pengelolaan bisnis dan keuangan perusahaan.
+                </p>
+                <button
+                  class="btn btn-halaman-utama btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalKonsultasiManajemenKeuangan"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-style-services col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+              <img
+                src="./assets/tax-svgrepo-com.svg"
+                alt=""
+                class="image-services"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Jasa Perpajakan</h5>
+                <p class="card-text text-muted">
+                  Pendampingan pengelolaan pajak perusahaan secara patuh,
+                  efisien, dan tepat waktu.
+                </p>
+                <button
+                  class="btn btn-halaman-utama btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalJasaPerpajakan"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-style-services col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+              <img
+                src="./assets/computer-and-people-svgrepo-com.svg"
+                alt=""
+                class="image-services"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">
+                  Jasa Teknologi Informasi Akuntansi
+                </h5>
+                <p class="card-text text-muted">
+                  Implementasi sistem akuntansi berbasis teknologi untuk
+                  meningkatkan efisiensi pencatatan dan pelaporan.
+                </p>
+                <button
+                  class="btn btn-halaman-utama btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalTeknologiInformasiAkuntansi"
+                >
+                  Lihat Detail
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Services -->
-      <section id="services" class="py-5">
-        <div class="container">
-          <h2 class="text-center fw-bold">Our Services</h2>
-          <p class="text-center mb-5">
-            LOGO CHARTERED ACCOUNTANT DAN IKATAN AKUNTAN INDONESIA
-          </p>
-          <div class="row justify-content-center g-4">
-            <div class="box-style-services col-md-4">
-              <div class="card border-0 shadow-lg h-100">
-                <img
-                  src="./assets/orangebook-svgrepo-com.svg"
-                  alt=""
-                  class="image-services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold">Jasa Pembukuan</h5>
-                  <p class="card-text text-muted">
-                    Menyusun dan mengelola pembukuan secara sistematis untuk
-                    mendukung laporan keuangan yang rapi dan akurat.
-                  </p>
-                  <button
-                    class="btn btn-halaman-utama btn-sm"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalJasaPembukuan"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="box-style-services col-md-4">
-              <div class="card border-0 shadow-lg h-100">
-                <img
-                  src="./assets/presentation-financial-svgrepo-com.svg"
-                  alt=""
-                  class="image-services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold">
-                    Penyusunan & Kompilasi Laporan Keuangan
-                  </h5>
-                  <p class="card-text text-muted">
-                    Penyajian laporan keuangan yang jelas, terstruktur, dan
-                    sesuai standar untuk kebutuhan internal maupun eksternal.
-                  </p>
-                  <button
-                    class="btn btn-halaman-utama btn-sm"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalPenyusunanLaporanKeuangan"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="box-style-services col-md-4">
-              <div class="card border-0 shadow-lg h-100">
-                <img
-                  src="./assets/business-person-woman-who-consults-svgrepo-com.svg"
-                  alt=""
-                  class="image-services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold">
-                    Konsultasi Manajemen & Keuangan
-                  </h5>
-                  <p class="card-text text-muted">
-                    Memberikan solusi strategis untuk meningkatkan efektivitas
-                    pengelolaan bisnis dan keuangan perusahaan.
-                  </p>
-                  <button
-                    class="btn btn-halaman-utama btn-sm"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalKonsultasiManajemenKeuangan"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="box-style-services col-md-4">
-              <div class="card border-0 shadow-lg h-100">
-                <img
-                  src="./assets/tax-svgrepo-com.svg"
-                  alt=""
-                  class="image-services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold">Jasa Perpajakan</h5>
-                  <p class="card-text text-muted">
-                    Pendampingan pengelolaan pajak perusahaan secara patuh,
-                    efisien, dan tepat waktu.
-                  </p>
-                  <button
-                    class="btn btn-halaman-utama btn-sm"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalJasaPerpajakan"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="box-style-services col-md-4">
-              <div class="card border-0 shadow-lg h-100">
-                <img
-                  src="./assets/computer-and-people-svgrepo-com.svg"
-                  alt=""
-                  class="image-services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold">
-                    Jasa Teknologi Informasi Akuntansi
-                  </h5>
-                  <p class="card-text text-muted">
-                    Implementasi sistem akuntansi berbasis teknologi untuk
-                    meningkatkan efisiensi pencatatan dan pelaporan.
-                  </p>
-                  <button
-                    class="btn btn-halaman-utama btn-sm"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalTeknologiInformasiAkuntansi"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- Our Team -->
     <section id="ourteam" class="py-5">
       <div class="container text-center">
-        <h2 class="fw-bold mb-5">Our Team</h2>
-        <div class="row justify-content-center g-4">
-          <!-- Leader 1 -->
-          <div class="col-md-4 col-sm-6 text-center">
+        <h2 class="fw-bold mb-5 title">Tim Kami</h2>
+
+        <div class="row justify-content-center align-items-start g-4">
+          <!-- Person 2 (Left) -->
+          <div class="col-md-4 col-sm-6 text-center order-2 team-1 order-md-1">
+            <img src="./assets/yusuf.jpg" class="team-photo mb-3" alt="Yusuf" />
+            <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
+            <small class="text-muted">Business Consultant</small>
+          </div>
+
+          <!-- Leader (Center) -->
+          <div
+            class="col-md-4 col-sm-12 text-center order-1 order-md-2 leader-container"
+          >
             <img
-              src="./assets/yusuf.jpg"
-              class="our-team-photo mb-3"
-              alt="Leader"
+              src="./assets/person_1000dp_000000_FILL0_wght400_GRAD0_opsz48.png"
+              class="team-photo leader-photo mb-3"
+              alt="Luhut"
             />
             <h5 class="fw-semibold mb-1">
               Dr. Luhut Marito Pakpahan, SE. Ak, MM, CA, CPA (Aust.), CMA
@@ -518,23 +540,12 @@
             <small class="text-muted">Managing Partner</small>
           </div>
 
-          <!-- Leader 2 -->
-          <div class="col-md-4 col-sm-6 text-center">
-            <img
-              src="./assets/yusuf.jpg"
-              class="our-team-photo mb-3"
-              alt="Leader"
-            />
-            <h5 class="fw-semibold mb-1">Yusuf Hidral</h5>
-            <small class="text-muted">Business Consultant </small>
-          </div>
-
-          <!-- Leader 3 -->
-          <div class="col-md-4 col-sm-6 text-center">
+          <!-- Person 3 (Right) -->
+          <div class="col-md-4 col-sm-6 text-center order-3 team-2 order-md-3">
             <img
               src="./assets/atri.png"
-              class="our-team-photo mb-3"
-              alt="Leader"
+              class="team-photo team-photo-2 mb-3"
+              alt="Atri"
             />
             <h5 class="fw-semibold mb-1">Atri Astuti, SE</h5>
             <small class="text-muted">Tax Consultant</small>
@@ -543,66 +554,97 @@
       </div>
     </section>
 
-    <div class="bg-wave6">
-      <!-- Clients -->
-      <section id="clients" class="py-5">
-        <div class="container text-center">
-          <h2 class="fw-bold mb-5">Our Clients</h2>
+    <!-- Clients -->
+    <section id="clients" class="py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5 title">Klien Kami</h2>
 
-          <div class="clients-scroll">
-            <div class="clients-track">
-              <!-- Set 1 -->
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
+        <div class="clients-scroll">
+          <div class="clients-track">
+            <!-- Set 1 -->
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
 
-              <!-- Set 2 (duplikat untuk infinite loop) -->
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-              <div class="clients-card"></div>
-            </div>
+            <!-- Set 2 (duplikat untuk infinite loop) -->
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
+            <div class="clients-card"></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact -->
-      <section id="contact" class="py-5">
-        <div class="container">
-          <div class="row align-items-center p-5">
-            <div class="col-md-6">
-              <h2 class="fw-bold mb-3">Contact Us</h2>
-              <p>Reach out to us for any accounting or financial needs.</p>
-              <p class="fw-semibold mb-1">Email: yusufhidral@gmail.com</p>
-              <p class="fw-semibold mb-1">Phone: (+62)857-1075-1970</p>
-            </div>
-            <div class="col-md-6">
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row align-items-center p-5">
+          <div class="col-md-6">
+            <h2 class="fw-bold mb-3 title">Hubungi Kami</h2>
+            <p>Hubungi kami untuk segala kebutuhan akuntansi dan keuangan.</p>
+
+            <div class="d-flex align-items-center gap-3 mb-2">
               <img
-                src="./assets/bg3.jpg"
-                width="500"
-                class="img-fluid rounded shadow"
+                src="./assets/mail_100dp_000000_FILL0_wght400_GRAD0_opsz48.png"
+                alt="Email"
+                width="30"
               />
+              <p class="fw-semibold mb-0">Email: kja.luhutpakpahan@gmail.com</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img
+                src="./assets/call_100dp_000000_FILL0_wght400_GRAD0_opsz48.png"
+                alt="Fax"
+                width="30"
+              />
+              <p class="fw-semibold mb-0">Telp: (+62) 2218309924</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img src="./assets/whatsapp.png" alt="Phone" width="30" />
+              <p class="fw-semibold mb-0">WA: (+62) 857-1075-1970</p>
             </div>
           </div>
+
+          <div class="col-md-6">
+            <img
+              src="./assets/bg3.jpg"
+              width="500"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-footer text-light pt-5 pb-3">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
           <div class="col-md-4 mb-4">
             <div class="d-flex align-items-center">
-              <img src="./assets/LOGO.png" width="50" alt="Logo" class="mb-3" />
-              <h5 class="fw-bold">(KJA) LUHUT MARITO PAKPAHAN</h5>
+              <img
+                src="./assets/KJA LUHUT & REKAN TRANSPARANT.png"
+                width="150"
+                alt="Logo"
+                class="mb-3"
+              />
+              <img
+                src="./assets/sdsdsdsdsds.png"
+                width="260"
+                alt="Logo"
+                class="mb-3"
+              />
             </div>
             <p>
-              Professional Public Accounting & Business Advisory firm dedicated
-              to transparency, accuracy, and sustainable financial growth.
+              Profesional Akuntansi Publik & Penasihat Bisnis Profesional yang
+              berdedikasi pada transparansi, akurasi, dan pertumbuhan keuangan
+              yang berkelanjutan.
             </p>
           </div>
 
@@ -643,24 +685,32 @@
           </div>
 
           <div class="col-md-3 mb-4">
-            <h6 class="fw-semibold mb-3">Contact</h6>
+            <h6 class="fw-semibold mb-3">Kontak</h6>
             <p class="mb-1">
               Jl. Dr. Saharjo No. 96G, Menteng Atas, Setiabudi, Jakarta 12960
             </p>
-            <p class="mb-1">Phone: (+62)857-1075-1970</p>
-            <p class="mb-1">Email: yusufhidral@gmail.com</p>
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img
+                src="./assets/call_100dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png"
+                alt="Phone"
+                width="30"
+              />
+              <p class="mb-0">(+62) 2218309924</p>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img
+                src="./assets/mail_100dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png"
+                alt="Email"
+                width="30"
+              />
+              <p class="mb-0">kja.luhutpakpahan@gmail.com</p>
+            </div>
           </div>
-
-          <div class="col-md-3 mb-4">
-            <h6 class="fw-semibold mb-3">Follow Us</h6>
-            <a href="#" class="text-light me-3">Instagram: KJA_Company</a><br />
-            <a href="#" class="text-light me-3">Twitter: KJA_Company</a><br />
-            <a href="#" class="text-light me-3">Linkedin: KJA_Company</a>
+          <hr class="border-secondary" />
+          <div class="text-center">
+            © 2025 <span class="fw-semibold">KJA LMP</span>. All Rights
+            Reserved.
           </div>
-        </div>
-        <hr class="border-secondary" />
-        <div class="text-center">
-          © 2025 <span class="fw-semibold">KJA LMP</span>. All Rights Reserved.
         </div>
       </div>
     </footer>
