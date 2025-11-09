@@ -88,11 +88,8 @@
       }
 
       .image-services {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 8px;
-        background: white;
+        height: 150px;
+        padding: 12px;
       }
 
       /* Our Team */
@@ -133,41 +130,42 @@
         background: transparent;
       }
 
+      /* Footer */
+      .bg-footer {
+        background-color: #263d55;
+      }
+
       /* SVG WAVE */
       .bg-wave1 {
         background: url("./assets/svg1.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
+        background-attachment: fixed;
       }
       .bg-wave2 {
         background: url("./assets/svg2.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
       }
       .bg-wave3 {
         background: url("./assets/svg3.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
       }
       .bg-wave4 {
         background: url("./assets/svg4.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
       }
       .bg-wave5 {
         background: url("./assets/svg5.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
       }
       .bg-wave6 {
         background: url("./assets/svg6.svg") no-repeat;
-        background-size: cover; /* kalau pecah ganti ke contain */
+        background-size: cover;
         background-position: center;
-      }
-
-      /* Footer */
-      .bg-footer {
-        background-color: #263d55;
       }
 
       @media (max-width: 768px) {
@@ -353,58 +351,126 @@
           <p class="text-center mb-5">
             LOGO CHARTERED ACCOUNTANT DAN IKATAN AKUNTAN INDONESIA
           </p>
-          <div class="row g-4">
+          <div class="row justify-content-center g-4">
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-services"></div>
+                <img
+                  src="./assets/orangebook-svgrepo-com.svg"
+                  alt=""
+                  class="image-services"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold">Jasa Pembukuan</h5>
+                  <p class="card-text text-muted">
+                    Menyusun dan mengelola pembukuan secara sistematis untuk
+                    mendukung laporan keuangan yang rapi dan akurat.
+                  </p>
+                  <button
+                    class="btn btn-halaman-utama btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalJasaPembukuan"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-style-services col-md-4">
+              <div class="card border-0 shadow-lg h-100">
+                <img
+                  src="./assets/presentation-financial-svgrepo-com.svg"
+                  alt=""
+                  class="image-services"
+                />
                 <div class="card-body">
                   <h5 class="card-title fw-semibold">
-                    Corporate Financial Audit
+                    Penyusunan & Kompilasi Laporan Keuangan
                   </h5>
                   <p class="card-text text-muted">
-                    Comprehensive audit for a mid-sized manufacturing company.
+                    Penyajian laporan keuangan yang jelas, terstruktur, dan
+                    sesuai standar untuk kebutuhan internal maupun eksternal.
                   </p>
                   <button
                     class="btn btn-halaman-utama btn-sm"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalAudit"
+                    data-bs-target="#modalPenyusunanLaporanKeuangan"
                   >
                     View Details
                   </button>
                 </div>
               </div>
             </div>
+
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-services"></div>
+                <img
+                  src="./assets/business-person-woman-who-consults-svgrepo-com.svg"
+                  alt=""
+                  class="image-services"
+                />
                 <div class="card-body">
-                  <h5 class="card-title fw-semibold">Tax Advisory for SMEs</h5>
+                  <h5 class="card-title fw-semibold">
+                    Konsultasi Manajemen & Keuangan
+                  </h5>
                   <p class="card-text text-muted">
-                    Providing guidance to small & medium enterprises for tax
-                    compliance.
+                    Memberikan solusi strategis untuk meningkatkan efektivitas
+                    pengelolaan bisnis dan keuangan perusahaan.
                   </p>
                   <button
                     class="btn btn-halaman-utama btn-sm"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalTax"
+                    data-bs-target="#modalKonsultasiManajemenKeuangan"
                   >
                     View Details
                   </button>
                 </div>
               </div>
             </div>
+
             <div class="box-style-services col-md-4">
               <div class="card border-0 shadow-lg h-100">
-                <div class="image-services"></div>
+                <img
+                  src="./assets/tax-svgrepo-com.svg"
+                  alt=""
+                  class="image-services"
+                />
                 <div class="card-body">
-                  <h5 class="card-title fw-semibold">Financial Planning</h5>
+                  <h5 class="card-title fw-semibold">Jasa Perpajakan</h5>
                   <p class="card-text text-muted">
-                    Helping businesses optimize budgeting and investments.
+                    Pendampingan pengelolaan pajak perusahaan secara patuh,
+                    efisien, dan tepat waktu.
                   </p>
                   <button
                     class="btn btn-halaman-utama btn-sm"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalPlanning"
+                    data-bs-target="#modalJasaPerpajakan"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-style-services col-md-4">
+              <div class="card border-0 shadow-lg h-100">
+                <img
+                  src="./assets/computer-and-people-svgrepo-com.svg"
+                  alt=""
+                  class="image-services"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold">
+                    Jasa Teknologi Informasi Akuntansi
+                  </h5>
+                  <p class="card-text text-muted">
+                    Implementasi sistem akuntansi berbasis teknologi untuk
+                    meningkatkan efisiensi pencatatan dan pelaporan.
+                  </p>
+                  <button
+                    class="btn btn-halaman-utama btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalTeknologiInformasiAkuntansi"
                   >
                     View Details
                   </button>
@@ -562,19 +628,19 @@
       </div>
     </footer>
 
-    <!-- Modal Corporate Financial Audit -->
+    <!-- Modal Jasa Pembukuan -->
     <div
       class="modal fade"
-      id="modalAudit"
+      id="modalJasaPembukuan"
       tabindex="-1"
-      aria-labelledby="modalAuditLabel"
+      aria-labelledby="modalJasaPembukuanLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="modalAuditLabel">
-              Corporate Financial Audit
+            <h5 class="modal-title fw-bold" id="modalJasaPembukuanLabel">
+              Jasa Pembukuan
             </h5>
             <button
               type="button"
@@ -585,11 +651,11 @@
           </div>
           <div class="modal-body">
             <p>
-              Kami menyediakan layanan audit laporan keuangan yang komprehensif
-              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
-              standar akuntansi yang berlaku. Audit dilakukan oleh tim
-              profesional berpengalaman untuk membantu pengambilan keputusan dan
-              menjaga kredibilitas perusahaan.
+              Layanan pembukuan kami membantu perusahaan dalam mencatat seluruh
+              transaksi keuangan secara teratur dan sesuai standar akuntansi
+              yang berlaku. Dengan pembukuan yang terorganisir, perusahaan dapat
+              memantau kondisi keuangan secara real-time serta mempermudah
+              proses penyusunan laporan keuangan dan perpajakan.
             </p>
           </div>
           <div class="modal-footer">
@@ -605,19 +671,22 @@
       </div>
     </div>
 
-    <!-- Modal Tax Advisory for SMEs -->
+    <!-- Modal Penyusunan & Kompilasi Laporan Keuangan -->
     <div
       class="modal fade"
-      id="modalTax"
+      id="modalPenyusunanLaporanKeuangan"
       tabindex="-1"
-      aria-labelledby="modalTaxLabel"
+      aria-labelledby="modalPenyusunanLaporanKeuanganLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="modalTaxLabel">
-              Tax Advisory for SMEs
+            <h5
+              class="modal-title fw-bold"
+              id="modalPenyusunanLaporanKeuanganLabel"
+            >
+              Penyusunan & Kompilasi Laporan Keuangan
             </h5>
             <button
               type="button"
@@ -628,11 +697,12 @@
           </div>
           <div class="modal-body">
             <p>
-              Kami menyediakan layanan audit laporan keuangan yang komprehensif
-              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
-              standar akuntansi yang berlaku. Audit dilakukan oleh tim
-              profesional berpengalaman untuk membantu pengambilan keputusan dan
-              menjaga kredibilitas perusahaan.
+              Kami menyediakan layanan penyusunan serta kompilasi laporan
+              keuangan yang mengacu pada Standar Akuntansi Keuangan (SAK).
+              Laporan disusun secara profesional untuk menggambarkan kinerja dan
+              posisi keuangan perusahaan, sehingga dapat dijadikan dasar untuk
+              pengambilan keputusan manajemen, audit, serta keperluan instansi
+              terkait.
             </p>
           </div>
           <div class="modal-footer">
@@ -648,19 +718,22 @@
       </div>
     </div>
 
-    <!-- Modal Financial Planning -->
+    <!-- Modal Konsultasi Manajemen & Keuangan -->
     <div
       class="modal fade"
-      id="modalPlanning"
+      id="modalKonsultasiManajemenKeuangan"
       tabindex="-1"
-      aria-labelledby="modalPlanningLabel"
+      aria-labelledby="modalKonsultasiManajemenKeuanganLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="modalPlanningLabel">
-              Financial Planning
+            <h5
+              class="modal-title fw-bold"
+              id="modalKonsultasiManajemenKeuanganLabel"
+            >
+              Konsultasi Manajemen & Keuangan
             </h5>
             <button
               type="button"
@@ -671,11 +744,97 @@
           </div>
           <div class="modal-body">
             <p>
-              Kami menyediakan layanan audit laporan keuangan yang komprehensif
-              untuk memastikan transparansi, keandalan, dan kepatuhan dengan
-              standar akuntansi yang berlaku. Audit dilakukan oleh tim
-              profesional berpengalaman untuk membantu pengambilan keputusan dan
-              menjaga kredibilitas perusahaan.
+              Layanan konsultasi kami membantu perusahaan menganalisis struktur
+              biaya, arus kas, pengelolaan aset, hingga strategi bisnis. Kami
+              memberikan rekomendasi berbasis data untuk meningkatkan efisiensi,
+              profitabilitas, dan tata kelola perusahaan.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Jasa Perpajakan -->
+    <div
+      class="modal fade"
+      id="modalJasaPerpajakan"
+      tabindex="-1"
+      aria-labelledby="modalJasaPerpajakanLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalJasaPerpajakanLabel">
+              Jasa Perpajakan
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Layanan perpajakan meliputi perhitungan, pelaporan, dan konsultasi
+              pajak untuk membantu perusahaan memenuhi kewajiban perpajakan
+              sesuai peraturan yang berlaku. Kami memastikan pengelolaan pajak
+              lebih efisien tanpa mengabaikan kepatuhan hukum.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Jasa Teknologi Informasi Akuntansi -->
+    <div
+      class="modal fade"
+      id="modalTeknologiInformasiAkuntansi"
+      tabindex="-1"
+      aria-labelledby="modalTeknologiInformasiAkuntansiLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title fw-bold"
+              id="modalTeknologiInformasiAkuntansiLabel"
+            >
+              Jasa Teknologi Informasi Akuntansi
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kami membantu memilih, mengkonfigurasi, dan menerapkan sistem
+              informasi akuntansi yang sesuai dengan kebutuhan operasional
+              perusahaan. Dengan pemanfaatan teknologi, proses pengolahan data
+              keuangan menjadi lebih cepat, akurat, dan mudah diakses.
             </p>
           </div>
           <div class="modal-footer">
